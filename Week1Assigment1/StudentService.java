@@ -1,70 +1,64 @@
 package Week1Assigment1;
 
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
 public class StudentService {
 
-    public Student[] stuarr = new Student[10];
+    private Student[] students = new Student[10];
+    private int count = 0;
+    private int idCounter = 1;
 
-
-    /*private  enum  Course{
-        Computer_Science,IT,ENTC,Mechanical
-    }*/
-    int i = 0;
-    int id = 0;
+    private Scanner sc = new Scanner(System.in);
 
     public void addStudent() {
-        Student stu = new Student();
-        Scanner sc = new Scanner(System.in);
+        if (count >= students.length) {
+            System.out.println("Student limit reached");
+            return;
+        }
 
-        stu.setId(id);
-        System.out.println("Enter first name: ");
-        if (!stu.setFirstname(sc.nextLine())) return;
-        System.out.println("Enter last name");
-        if (!stu.setLastname(sc.nextLine())) return;
-        System.out.println("Enter course");
-        /*Course coursee=sc.next();
-        for (Course c: Course.values()){
-            if(c.name().equalsIgnoreCase(coursee)){
-                stu.setCourse(coursee);
+        System.out.print("Enter first name: ");
+        String fname = sc.nextLine();
+
+        System.out.print("Enter last name: ");
+        String lname = sc.nextLine();
+
+        Student student = new Student(idCounter++, fname, lname);
+
+        while (true) {
+            System.out.print("Enter course (or 'done'): ");
+            String input = sc.nextLine();
+
+            if (input.equalsIgnoreCase("done")) {
+                break;
             }
-        }*/
 
-        stu.setCoursee(sc.nextLine());
-
-        stuarr[i] = stu;
-        i++;
-        id++;
-    }
-
-    public void display() {
-        for (Student stuinfo : stuarr) {       //traversing throug student array
-            // to print the values
-            if (stuinfo != null) {
-                System.out.println(stuinfo.toString());
+            try {
+                Course course = Course.valueOf(input.toUpperCase());
+                if (!student.addCourse(course)) {
+                    System.out.println("Course already enrolled!");
+                }
+            } catch (IllegalArgumentException e) {
+                System.out.println("Invalid course!");
             }
         }
 
+        students[count++] = student;
+    }
+
+    public void display() {
+        for (int i = 0; i < count; i++) {
+            System.out.println(students[i]);
+        }
     }
 
     public void saveinfile() throws IOException {
         FileWriter fw = new FileWriter("file.txt");
-        for (Student s : stuarr) {
-            fw.write(s + " ");
+        for (int i = 0; i < count; i++) {
+            fw.write(students[i].toString() + "\n");
         }
-        File file = new File("file.txt");
-        Scanner sc = new Scanner(file, "UTF-8");
-
-        while (sc.hasNextLine()) {
-            System.out.println(sc.nextLine());
-        }
-
-        sc.close();
         fw.close();
+        System.out.println("Data saved successfully.");
     }
-
-
 }

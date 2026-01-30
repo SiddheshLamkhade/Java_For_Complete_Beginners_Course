@@ -1,81 +1,44 @@
 package Week1Assigment1;
 
 public class Student {
+
     private int id;
     private String firstname;
     private String lastname;
-    //private Course course;
-    private String coursee;
 
+    private Course[] courses = new Course[4];
+    private int courseCount = 0;
 
-    private enum Course {
-        Computer_Science, IT, ENTC, Mechanical
-    }
-
-    Student() {
-    }
-
-    Student(int id, String firstname, String lastname, String c) {
+    public Student(int id, String firstname, String lastname) {
         this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;
-        this.coursee = c;
     }
 
-    StudentService studentService = new StudentService();
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public boolean setFirstname(String firstname) {
-        for (Student s : studentService.stuarr) {
-            if (s.firstname == firstname) {
+    public boolean addCourse(Course course) {
+        for (int i = 0; i < courseCount; i++) {
+            if (courses[i] == course) {   // logical equality for enum
                 return false;
             }
         }
-        this.firstname = firstname;
-        return true;
-
-    }
-
-    public boolean setLastname(String lastname) {
-        for (Student s : studentService.stuarr) {
-            if (s.lastname == lastname) {
-                return false;
-            }
-        }
-        this.lastname = lastname;
+        courses[courseCount++] = course;
         return true;
     }
-
 
     public int getId() {
         return id;
     }
 
-    public String getFirstname() {
-        return firstname;
-
-    }
-
-    public String getLastname() {
-        return lastname;
-    }
-
-    public String getCoursee() {
-        return coursee;
-    }
-
-    public void setCoursee(String coursee) {
-
-        this.coursee = coursee;
-    }
-
     public String toString() {
-        return "ID: " + id +
-                "            First Name: " + firstname +
-                "            Last Name: " + lastname +
-                "            Course: " + coursee;
+        StringBuilder sb = new StringBuilder();
+        sb.append("ID: ").append(id)
+                .append("  First Name: ").append(firstname)
+                .append("  Last Name: ").append(lastname)
+                .append("  Courses: ");
+
+        for (int i = 0; i < courseCount; i++) {
+            sb.append(courses[i]).append(" ");
+        }
+        return sb.toString();
     }
 }
