@@ -33,7 +33,9 @@ public class StudentService {
             }
         }*/
         for(Student s: stuarr){
-            if(s.equals())
+            if(s.equals(stu)){
+                return;
+            }
         }
         stu.setCoursee(sc.nextLine());
 
