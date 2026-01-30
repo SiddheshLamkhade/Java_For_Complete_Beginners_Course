@@ -20,6 +20,11 @@ public class StudentService {
     public void addStudent(){
         Student stu=new Student();
         Scanner sc=new Scanner(System.in);
+        for(Student s: stuarr){
+            if(s.equals(stu)){
+                return;
+            }
+        }
         stu.setId(id);
         System.out.println("Enter first name: ");
         stu.setFirstname(sc.nextLine());
@@ -32,11 +37,7 @@ public class StudentService {
                 stu.setCourse(coursee);
             }
         }*/
-        for(Student s: stuarr){
-            if(s.equals(stu)){
-                return;
-            }
-        }
+
         stu.setCoursee(sc.nextLine());
 
         stuarr[i]=stu;
