@@ -8,27 +8,45 @@ public class Student {
     private String coursee;
 
 
-    private  enum  Course{
-        Computer_Science,IT,ENTC,Mechanical
+    private enum Course {
+        Computer_Science, IT, ENTC, Mechanical
     }
-    Student(){
+
+    Student() {
     }
-    Student(int id, String firstname, String lastname,String c){
-        this.id=id;
-        this.firstname=firstname;
-        this.lastname=lastname;
-        this.coursee=c;
+
+    Student(int id, String firstname, String lastname, String c) {
+        this.id = id;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.coursee = c;
     }
+
+    StudentService studentService = new StudentService();
 
     public void setId(int id) {
         this.id = id;
     }
-    public void setFirstname(String firstname){
-        this.firstname=firstname;
+
+    public boolean setFirstname(String firstname) {
+        for (Student s : studentService.stuarr) {
+            if (s.firstname == firstname) {
+                return false;
+            }
+        }
+        this.firstname = firstname;
+        return true;
+
     }
 
-    public void setLastname(String lastname) {
+    public boolean setLastname(String lastname) {
+        for (Student s : studentService.stuarr) {
+            if (s.lastname == lastname) {
+                return false;
+            }
+        }
         this.lastname = lastname;
+        return true;
     }
 
 
@@ -38,6 +56,7 @@ public class Student {
 
     public String getFirstname() {
         return firstname;
+
     }
 
     public String getLastname() {
@@ -49,6 +68,7 @@ public class Student {
     }
 
     public void setCoursee(String coursee) {
+
         this.coursee = coursee;
     }
 
