@@ -1,5 +1,5 @@
 package Week1Assigment1;
-
+//pojo class
 public class Student {
 
     private int id;
@@ -7,7 +7,10 @@ public class Student {
     private String lastname;
 
     private Course[] courses = new Course[4];
+    //I am using course array to store store course id with the help of below variable
     private int courseCount = 0;
+    // This courseCount will be different for different students
+    // And i will decide it with the help of enum
 
     public Student(int id, String firstname, String lastname) {
         this.id = id;
