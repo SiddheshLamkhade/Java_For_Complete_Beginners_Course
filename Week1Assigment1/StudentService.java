@@ -12,6 +12,8 @@ public class StudentService {
 
     private Scanner sc = new Scanner(System.in);
 
+
+    // here i have written code to add the students
     public void addStudent() {
         if (count >= students.length) {
             System.out.println("Student limit reached");
@@ -48,6 +50,8 @@ public class StudentService {
         students[count++] = student;
     }
 
+
+    // here i am displaying the info of students with the help of array
     public void display() {
         for (int i = 0; i < count; i++) {
             System.out.println(students[i]);

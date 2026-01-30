@@ -6,3 +6,4 @@ public enum Course {
     ENTC,
     MECHANICAL
 }
+//I have created enum for course since courses are fixed
