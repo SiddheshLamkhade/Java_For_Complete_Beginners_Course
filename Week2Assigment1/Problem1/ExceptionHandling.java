@@ -1,7 +1,7 @@
-package Week2Assigment1;
+package Week2Assigment1.Problem1;
 import java.util.*;
 
-public class P1_ExceptionHandling {
+public class ExceptionHandling {
     static void main() {
         Scanner input=new Scanner(System.in);
 
