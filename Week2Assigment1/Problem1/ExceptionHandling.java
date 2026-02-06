@@ -14,9 +14,11 @@ public class ExceptionHandling {
                 int c= num1/num2;
                 System.out.println("Result is : "+c);
             }
+            // if exception occurs due to no. divided by 0 then it will be caught by this catch block
             catch (ArithmeticException e){
                 System.out.println("ArithmeticException has been occured");
             }
+            // if exception occurs due input e.g. passing a string instead of a number then it will be caught by this catch block
             catch (InputMismatchException ie){
                 System.out.println("InputMismatchException has been occured");
             }

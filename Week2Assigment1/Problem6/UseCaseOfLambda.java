@@ -14,7 +14,7 @@ public class UseCaseOfLambda {
         employees.forEach(e -> System.out.println(e));
 
         System.out.println("\nNames starting with 'S':");
-        // Filtering names starting with 'A'
+        // Filtering names starting with 'S'
         employees.stream()
                 .filter(e -> e.startsWith("S"))
                 .forEach(name -> System.out.println(name));
