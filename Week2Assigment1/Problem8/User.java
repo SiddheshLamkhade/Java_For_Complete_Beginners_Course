@@ -1,6 +1,7 @@
 package Week2Assigment1.Problem8;
 import java.io.Serializable;
-public class User implements Serializable {
+public class
+User implements Serializable {
     String username;
     transient String password;   // will NOT be serialized
     String email;
