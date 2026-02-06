@@ -4,8 +4,7 @@ import java.util.*;
 public class ExceptionHandling {
     static void main() {
         Scanner input=new Scanner(System.in);
-
-
+        // If any exception occurs while taking any input it will throw an exception and will be handled in catch method
             try {
                 System.out.print("Enter first number : ");
                 int num1=input.nextInt();

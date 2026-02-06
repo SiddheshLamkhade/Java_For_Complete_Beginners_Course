@@ -28,7 +28,7 @@ public class BankAccount {
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
 
 
         BankAccount.Transaction tx = new BankAccount().new Transaction();
@@ -36,22 +36,22 @@ public class BankAccount {
 
         System.out.println("To deposit press 1");
         System.out.println("To withdraw press 2");
-        int ch = sc.nextInt();
+        int ch = input.nextInt();
 
         if (ch == 1) {
             System.out.print("Enter amount to be deposited: ");
-            int d = sc.nextInt();
+            int d = input.nextInt();
             tx.deposit(d);
         }
         else if (ch == 2) {
             System.out.print("Enter amount to be withdrawn: ");
-            int w = sc.nextInt();
+            int w = input.nextInt();
             tx.withdraw(w);
         }
         else {
             System.out.println("Invalid input");
         }
 
-        sc.close();
+        input.close();
     }
 }
