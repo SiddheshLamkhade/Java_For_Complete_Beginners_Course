@@ -39,6 +39,12 @@ public class MapOrdering {
         List<HashMap<Integer,Integer>> lmap=new ArrayList<>();
         HashMap<Integer,Integer> mp=new HashMap<>();
         mp.put(2,3);
+        mp.put(4,3);
         lmap.add(mp);
+        HashMap<Integer,Integer> mp1=new HashMap<>();
+        mp1.put(12,3);
+        mp1.put(14,3);
+        lmap.add(mp1);
+
     }
 }
