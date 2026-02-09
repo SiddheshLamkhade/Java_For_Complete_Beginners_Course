@@ -33,7 +33,7 @@ public class Book implements Serializable {
     public void issue() {
         this.available = false;
     }
-    // if i want to receive current book object from recepient and to keep in library
+    // if i want to receive current book object from library member and to keep in library
     // i will call this method
     public void giveBack() {
         this.available = true;
