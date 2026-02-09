@@ -17,6 +17,7 @@ public class LibraryApp {
 
         while (true) {
             System.out.println("1.Admin 2.Member 3.Exit");
+            System.out.print("Enter your choice : ");
             int choice = input.nextInt();
 
             switch (choice) {
@@ -58,7 +59,11 @@ public class LibraryApp {
                 case 4 -> libraryService.getMembers()
                         .forEach(m -> System.out.println(m));
                 case 5 -> libraryService.saveToFile();
-                case 6 -> libraryService = LibraryService.loadFromFile();
+
+                case 6-> {
+                    LibraryService lib = LibraryService.loadFromFile();
+                    lib.getBooksSortedByTitle().forEach(b -> System.out.println(b));
+                }
                 default -> System.out.println("Invalid choice");
             }
         } catch (Exception e) {
