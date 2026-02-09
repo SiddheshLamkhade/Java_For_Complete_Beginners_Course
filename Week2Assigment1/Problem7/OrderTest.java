@@ -1,6 +1,7 @@
 package Week2Assigment1.Problem7;
 
-public class OrderTest {
+public class
+OrderTest {
 
     public static void main(String[] args) {
 
@@ -15,6 +16,10 @@ public class OrderTest {
         System.out.println("----------------------------------");
         System.out.println("Order Status: " + status);
         System.out.println("Message: " + status.getMessage());
+
+        for(OrderStatus s: OrderStatus.values()){
+            System.out.println(s + "    " +s.getMessage());
+        }
     }
 }
 

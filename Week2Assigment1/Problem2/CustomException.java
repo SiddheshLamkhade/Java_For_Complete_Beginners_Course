@@ -7,7 +7,8 @@ class InvalidAgeException extends RuntimeException {
     public InvalidAgeException(String message) {
         super(message);
 
-        // I have made a constructor and passed the message received for this exception to the parent class RuntimeException
+        // I have made a constructor and passed the message that was received for this exception...
+        // ...to the parent class RuntimeException
     }
 }
 

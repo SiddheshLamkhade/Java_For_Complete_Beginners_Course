@@ -8,12 +8,13 @@ public class TestSerialization {
         try {
             // Creating  object
             User u1 = new User("siddhesh", "secret123", "sid@gmail.com");
+            // Object created in memory
+
 
             // Serialization
-
             // creating file to store bytes into it
             FileOutputStream fos = new FileOutputStream("user.ser");
-            //createing an object output stream that can write Java objects to a file.
+            //creating an object output stream that can write Java objects to a file.
             ObjectOutputStream oos = new ObjectOutputStream(fos);
 
             //storing in a file.

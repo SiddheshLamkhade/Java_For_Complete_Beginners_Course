@@ -35,5 +35,10 @@ public class MapOrdering {
 
         System.out.println("\nTreeMap Output:");
         treeMap.forEach((k, v) -> System.out.println(k + " : " + v));
+
+        List<HashMap<Integer,Integer>> lmap=new ArrayList<>();
+        HashMap<Integer,Integer> mp=new HashMap<>();
+        mp.put(2,3);
+        lmap.add(mp);
     }
 }

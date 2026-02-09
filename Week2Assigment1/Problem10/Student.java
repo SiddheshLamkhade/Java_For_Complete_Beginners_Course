@@ -17,14 +17,16 @@ public class Student implements Comparable<Student> {
     // Sort by marks
     //  compare to compares two objects
     // it returns 0 , -1, 1
-    // it tell which object comes first
+    // it tells which object comes first
     //Comparable
+    // it returns 0,1,-1
+    // this.marks =80
+    // s.marks= 80
+    // 0 positive
     @Override
     public int compareTo(Student s) {
         return this.marks - s.marks;   // ascending order
     }
-
-
 
     void display() {
         System.out.println(id + " " + name + " " + marks);

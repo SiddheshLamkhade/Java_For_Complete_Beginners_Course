@@ -15,7 +15,6 @@ public class MethodPassing {
     }
 
     public static void main(String[] args) {
-
         // 1. Primitive example
         int number = 20;
         System.out.println("Before modifyPrimitive: number = " + number);
@@ -32,7 +31,8 @@ public class MethodPassing {
 }
 
 // Simple Person class
-class Person {
+class
+Person {
     String name;
     int age;
 
