@@ -1,6 +1,9 @@
 package Week2Assigment1.Problem6;
 import  java.util.*;
-public class UseCaseOfLambda {
+public class
+
+
+UseCaseOfLambda {
     public static void main() {
         List<String> employees = new ArrayList<>();
         // We have been asked to create list of String that's why I haven't created list of employee objects

@@ -10,7 +10,6 @@ public class TestSerialization {
             User u1 = new User("siddhesh", "secret123", "sid@gmail.com");
             // Object created in memory
 
-
             // Serialization
             // creating file to store bytes into it
             FileOutputStream fos = new FileOutputStream("user.ser");
