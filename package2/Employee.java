@@ -9,13 +9,10 @@ public class Employee implements Comparable<Employee>{
         this.id=id;
         this.salary=salary;
     }
-
-
     @Override
     public int compareTo(Employee o) {
         return this.id-o.id;
     }
-
 }
 class Main{
     static void main() {
@@ -36,4 +33,8 @@ class Main{
         ls.stream().sorted();
     }
 }
+
+
+
+
 
