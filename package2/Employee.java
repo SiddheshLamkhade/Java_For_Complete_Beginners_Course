@@ -32,6 +32,8 @@ class Main{
         });
         Collections.sort(ls,new SortWithSalary());
         ls.forEach(e-> System.out.println(e.salary));
+        ls.add(new Employee(23,3234));
+        ls.stream().sorted();
     }
 }
 
