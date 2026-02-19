@@ -3,7 +3,7 @@ import java.io.Serializable;
 public class
 User implements Serializable {
     String username;
-    transient String password;   // will NOT be serialized
+    transient final String password;   // will NOT be serialized
     String email;
 
     User(String username, String password, String email) {
